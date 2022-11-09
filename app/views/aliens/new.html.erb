@@ -1,0 +1,8 @@
+<div class="container mt-3">
+  <h1>Add Alien to <%= @planet.name %></h1>
+  <%= simple_form_for [@planet, @alien] do |f| %>
+    <%= f.input :name %>
+    <%= f.input :image_url %>
+    <%= f.submit class: 'btn btn-primary mt-3' %>
+  <% end %>
+</div>
