@@ -35,6 +35,45 @@
   }
 }
 
+.card-add-link {
+  color: white;
+  border-radius: 50%;
+  border: 1px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  opacity: 0.8;
+  font-weight: lighter;
+  &:hover {
+    color: white;
+    text-decoration: none;
+    opacity: 1;
+  }
+}
+
+.card-tags {
+  position: absolute;
+  bottom: 8px;
+  left: 8px;
+  width: 80%;
+
+  span {
+    background: $red;
+    font-size: .7em;
+    padding: 2px 4px;
+    border-radius: 3px;
+  }
+
+  a {
+    color: white;
+  }
+}
+
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;

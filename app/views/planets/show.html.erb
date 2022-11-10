@@ -7,12 +7,7 @@
 <div class="container mt-3">
   <div class="cards">
     <% @planet.aliens.each do |alien| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= alien.image_url %>)">
-        <%= alien.name %>
-        <%= link_to alien_path(alien), data: { turbo_method: 'delete', turbo_confirm: "Exterminate #{alien.name}?" }, class: 'card-remove-link' do %>
-          <i class="fa-solid fa-child-rifle"></i>
-        <% end %>
-      </div>
+      <%= render 'aliens/card', alien: alien %>
     <% end %>
   </div>
 </div>

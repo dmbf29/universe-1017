@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_09_081028) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_10_080952) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,6 +23,15 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_081028) do
     t.index ["planet_id"], name: "index_aliens_on_planet_id"
   end
 
+  create_table "mutations", force: :cascade do |t|
+    t.bigint "power_id", null: false
+    t.bigint "alien_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["alien_id"], name: "index_mutations_on_alien_id"
+    t.index ["power_id"], name: "index_mutations_on_power_id"
+  end
+
   create_table "planets", force: :cascade do |t|
     t.string "name"
     t.string "banner_url"
@@ -30,5 +39,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_09_081028) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "powers", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   add_foreign_key "aliens", "planets"
+  add_foreign_key "mutations", "aliens"
+  add_foreign_key "mutations", "powers"
 end

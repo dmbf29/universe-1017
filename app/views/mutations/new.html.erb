@@ -1,0 +1,8 @@
+<div class="container mt-3">
+  <h1>Add Power to <%= @alien.name %></h1>
+  <%= render 'aliens/card', alien: @alien %>
+  <%= simple_form_for [@alien, @mutation] do |f| %>
+    <%= f.association :power, include_blank: false, collection: @powers %>
+    <%= f.submit 'Add', class: 'btn btn-primary mt-2' %>
+  <% end %>
+</div>

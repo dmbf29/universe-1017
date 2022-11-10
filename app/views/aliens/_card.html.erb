@@ -1,0 +1,14 @@
+<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%= alien.image_url %>)">
+  <%= alien.name %>
+  <%= link_to alien_path(alien), data: { turbo_method: 'delete', turbo_confirm: "Exterminate #{alien.name}?" }, class: 'card-remove-link' do %>
+    <i class="fa-solid fa-child-rifle"></i>
+  <% end %>
+  <%= link_to new_alien_mutation_path(alien), class: 'card-add-link' do %>
+    <i class="fa-solid fa-biohazard"></i>
+  <% end %>
+  <div class="card-tags">
+    <% alien.powers.each do |power| %>
+      <span><%= power.name %></span>
+    <% end %>
+  </div>
+</div>
