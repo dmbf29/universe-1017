@@ -1,0 +1,12 @@
+# To create an app on Heroku
+# name of the app needs to be unique
+heroku create NAME-OF-APP --region us
+# heroku create universe-1017 --region us
+
+# To open your Heroku app in the browser
+heroku open
+
+# To check error message on Heroku
+heroku logs
+# To check error message on Heroku and follow new requests
+heroku logs --tail
