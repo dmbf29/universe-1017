@@ -2,7 +2,8 @@
   <h1>Add Alien to <%= @planet.name %></h1>
   <%= simple_form_for [@planet, @alien] do |f| %>
     <%= f.input :name %>
-    <%= f.input :image_url %>
+    <%#= f.input :image_url %>
+    <%= f.input :photo, as: :file %>
     <%= f.submit class: 'btn btn-primary mt-3' %>
   <% end %>
 </div>
