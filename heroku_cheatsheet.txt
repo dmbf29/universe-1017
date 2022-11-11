@@ -10,3 +10,8 @@ heroku open
 heroku logs
 # To check error message on Heroku and follow new requests
 heroku logs --tail
+
+# To run ANY rails command on heroku:
+heroku run ....
+# To migrate on heroku:
+heroku run rails db:migrate
